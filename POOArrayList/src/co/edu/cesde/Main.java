@@ -17,6 +17,17 @@ public class Main {
             System.out.println("Ingrese el documento");
             student.setIdentification(scanner.nextLine());
             students.add(student);
+
+            // agregar notas al estudiante
+            double finalGrade = 0;
+            for(int i=0; i<9; i++){
+                System.out.println("Ingrese nota");
+                double grade = Double.parseDouble(scanner.nextLine());
+                finalGrade = finalGrade + grade;
+                student.addGrade(grade);
+            }
+            finalGrade = finalGrade/student.getGrades().size();
+            student.setFinalGrade(finalGrade);
             System.out.println("Desea continuar -SI - NO");
             String stop = scanner.nextLine();
             if(stop.equalsIgnoreCase("NO")){
@@ -69,5 +80,8 @@ public class Main {
         for(int i=0; i<students.size(); i++){
             System.out.println("Nombre: " + students.get(i).getName());
         }
+
+        // agregar notas al estudiante
+
     }
 }

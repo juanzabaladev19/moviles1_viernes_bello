@@ -1,9 +1,31 @@
 package co.edu.cesde;
 
-public class Student {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Student extends Person{
     private String photo;
-    private String name;
-    private String identification;
+    private List<Double> grades = new ArrayList<>();
+    private double finalGrade;
+
+    public double getFinalGrade() {
+        return finalGrade;
+    }
+
+    public void setFinalGrade(double finalGrade) {
+        this.finalGrade = finalGrade;
+    }
+
+    public void addGrade(double grade){
+        this.grades.add(grade);
+    }
+    public List<Double> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(List<Double> grades) {
+        this.grades = grades;
+    }
 
     public String getPhoto() {
         return photo;
@@ -11,21 +33,5 @@ public class Student {
 
     public void setPhoto(String photo) {
         this.photo = photo;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIdentification() {
-        return identification;
-    }
-
-    public void setIdentification(String identification) {
-        this.identification = identification;
     }
 }
